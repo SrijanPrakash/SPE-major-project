@@ -1,0 +1,27 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+.DesktopOnly {
+  visibility: hidden;
+}
+
+.Root {
+  flex-grow: 1;
+  width: '100vw';
+  height: 'auto';
+  z-index: 20;
+  position: 'fixed';
+  top: 0;
+  font-family: 'Roboto';
+  /* font-size: 20px; */
+}
+
+@media (min-width: 768px) {
+  .NavBar {
+    flex-grow: 1;
+    width: 100vw;
+    height: auto;
+    z-index: 20;
+    position: fixed;
+    top: 0;
+  }
+}

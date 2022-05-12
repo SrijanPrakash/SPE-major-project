@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Bungee);
+
+.Favorites {
+	display: grid;
+	justify-items: center;
+	grid-template-rows: repeat(auto-fill, minmax(100px, 3fr));
+	font-family: 'Bungee';
+	text-shadow: 2px 2px white;
+	color : green;
+	/* padding-bottom: 9px; */
+}
+.NoFavorites {
+    font-size: 20px;
+	font-family: 'Bungee';
+	text-shadow: 2px 2px white;
+	color : red;
+}
+
+.Category {
+	text-transform: uppercase;
+	font-size: 24px;
+}
+.FavoriteList {
+	display: flex;
+	width: 100%;
+	flex-flow: wrap;
+	justify-content: space-between;
+
+}
+.attraction-info {
+	display: grid;
+	justify-items: center;
+	text-align: center;
+	padding: 20px;
+}
+.attraction-title {
+	text-transform: uppercase;
+	text-align: center;
+	justify-content: start;
+}
+.MuiCardMedia-root {
+	width: 100%;
+}
+.categoryName {
+	font-size: 2vw;
+}
+@media only screen and (max-width: 600px) {
+	.categoryName {
+		font-size: 10vw;
+	}
+	.attraction-title {
+		font-size: 99px;
+	}
+}
+
+body {
+	padding-top: 3em;
+	/* padding-bottom: 20px; */
+}

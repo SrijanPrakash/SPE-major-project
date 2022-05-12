@@ -1,0 +1,17 @@
+.Modalbox{
+    padding-top: 50px;
+}
+.Register {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-auto-flow: row;
+    padding: 10px;
+    text-align: center;
+}
+.TextField {
+    margin: 10px;
+}
+.WeddingInputs {
+    margin: 20px;
+}

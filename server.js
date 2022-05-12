@@ -1,0 +1,35 @@
+require('dotenv').config()
+const express = require('express')
+const bodyParser = require('body-parser')
+const morgan = require('morgan')
+var fs = require('fs')
+const cors = require('cors')
+const syncDb = require('./server/config/relations')
+
+const app = express()
+const vendors = require('./server/routes/vendors')
+const wedding = require('./server/routes/wedding')
+const auth = require('./server/routes/auth')
+const guests = require('./server/routes/guestManagement')
+var path = require('path')
+
+
+app.use(process.env.NODE_ENV === 'DEVELOPMENT' ? cors() : null)
+app.use(process.env.NODE_ENV === 'DEVELOPMENT' ? morgan("dev") : null)
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(morgan('combined', {
+  stream: fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+}))
+
+
+app.use('/api/vendors', vendors)
+app.use('/api/wedding-details', wedding)
+app.use('/api', guests)
+app.use('/api', auth)
+
+
+const PORT = process.env.PORT || 4200
+syncDb().then(() => {
+  app.listen(PORT, () => console.log(`Running on port ${4200}`))
+})
